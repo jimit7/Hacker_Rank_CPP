@@ -37,58 +37,47 @@ void miniMaxSum(vector<int> arr) {
         }
 
     mi=sum-M;
-  //  ma=sum-m;
- int64_t c;
-   //int m_i,m_a;
-//  a=sizeof(ar_n);
-  //b=sizeof(ar_p);
-  if(ar_p.empty()!=1 &&ar_n.empty()!=1){
- int64_t m_i=*std::max_element(std::begin(ar_n),std::end(ar_n));
-  int64_t m_a=*std::min_element(std::begin(ar_p),std::end(ar_p));
-  int a,b;
-  a=sum-m_a;
-  b=sum-m_i;
-  if(a>b)
-  {
+    int64_t c;
+    if(ar_p.empty()!=1 &&ar_n.empty()!=1)
+    {
+    int64_t m_i=*std::max_element(std::begin(ar_n),std::end(ar_n));
+    int64_t m_a=*std::min_element(std::begin(ar_p),std::end(ar_p));
+    int a,b;
+    a=sum-m_a;
+    b=sum-m_i;
+    if(a>b)
+    {
     c=a;
-  }
-  else if(b>a)
-  {
+    }
+    else if(b>a)
+    {
       c=b;
-  }
-  else{
+    }
+    else
+    {
     c=a;
-  }
-  }
-  else if(ar_p.empty()!=1&&ar_n.empty()==1)
-  {
+    }
+    }
+    else if(ar_p.empty()!=1&&ar_n.empty()==1)
+    {
     int64_t m_a=*std::min_element(std::begin(ar_p),std::end(ar_p));
     c=sum-m_a;
-  }
-  else if(ar_p.empty()==1&&ar_n.empty()!=1)
-  {
+    }
+    else if(ar_p.empty()==1&&ar_n.empty()!=1)
+    {
        int64_t m_i=*std::min_element(std::begin(ar_n),std::end(ar_n));
        c=sum-m_i;
-
-  }
-  else
-  {
+    }
+    else
+    {
       c=sum-m;
-
-  }
-  //if(ar_n == NULL)
-  //{
-  //   ma=sum-;
-  //}
-
+    }
     cout<<mi<<" "<<c;
     return;
-
-
-}
+    }
 
 int main()
-{
+    {
     string arr_temp_temp;
     getline(cin, arr_temp_temp);
 
@@ -105,9 +94,9 @@ int main()
     miniMaxSum(arr);
 
     return 0;
-}
+    }
 
-vector<string> split_string(string input_string) {
+    vector<string> split_string(string input_string) {
     string::iterator new_end = unique(input_string.begin(), input_string.end(), [] (const char &x, const char &y) {
         return x == y and x == ' ';
     });
