@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <cstring>
 #include <string>
 using namespace std;
 
@@ -8,9 +9,10 @@ using namespace std;
 string timeConversion(string s) {
    int size = s.length();
     string c;
+    //std::strcpy(c,s);
       string r =s.substr(0,2);
     vector<int> t_c(12);
-    for(int i=1;i<=12;i++)
+    for(int i=1;i<=11;i++)
     {
         if(i!=12)
         {
@@ -21,31 +23,41 @@ string timeConversion(string s) {
             t_c[i] = 00;
         }
     }
-    if(s[size-2]=='P')
+    if(s[8]=='P')
     {
-      if(s[0]!='1'&& s[1]!='2')
+         int n=stoi(r);
+         //cout<<n<<"\n";
+      if(n!=12)
       {
       //r[0],r[1]=s[0],s[1];
-      int n=stoi(r);
+     // int n=stoi(r);
       string r2= std::to_string(t_c[n]);
+     // cout<<r2<<"\n";
           string r3 =r2.append(s.substr(2,6));
+         // cout<<r2<<"\n";
           return r3;
       }
-        if(s[0]=='1'&& s[1]=='2')
+        if(n==12)
         {
-            return s.substr(0,size-2);
+            string s1=s.substr(0,8);
+            //cout<<s1<<"\n";
+            return s1;
         }
     }
-    if(s[size-2]=='A' )
+    if(s[8]=='A' )
     {
-        if(s[0]!='1'&& s[1]!='2')
+        int n=stoi(r);
+        if(n!=12)
       {
-         return s.substr(0,size-2);
+          string s2=s.substr(0,8);
+          // cout<<s2<<"\n";
+            return s2;
       }
-        if(s[0]== '1'&& s[2]== '2')
+        if(n==12)
         {
         string hh = "00";
         string nTime = hh.append(s.substr(2,6));
+         //cout<<nTime<<"\n";
         return nTime;
             
         }
@@ -63,7 +75,7 @@ int main()
 
     string result = timeConversion(s);
 
-    fout << result << "\n";
+    cout << result << "\n";
 
     fout.close();
 
