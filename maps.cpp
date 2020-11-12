@@ -22,12 +22,10 @@ int main() {
         cin>>b;
         pbk.insert({a,b});
     } 
-    for(long int i=0;i<n;i++)
-    {
     
     
        std::string c;
-        cin>>c;
+        while(cin>>c){
         std::map<std::string,long int>::iterator it;
        it = pbk.find(c);
        if (it == pbk.end())
