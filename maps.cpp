@@ -1,3 +1,4 @@
+// Example program
 #include <cmath>
 #include <cstdio>
 #include <vector>
@@ -21,17 +22,21 @@ int main() {
         cin>>b;
         pbk.insert({a,b});
     } 
-    while(1)
+    for(int i=0;i<n;i++)
     {
+    
+   // here:
        std::string c;
         cin>>c;
         std::map<std::string,int>::iterator it;
-       // it = pbk.find(c);
-       // if (it != pbk.end())
-        //pbk.erase (it);
-
+       it = pbk.find(c);
+       if (it == pbk.end())
+       {
+           cout<<"Not found"<<endl;
+       // goto here;
+}
     
-std::cout << "a => " << pbk.find(c)->second << '\n';
+std::cout << pbk.find(c)->first<< "=" << pbk.find(c)->second << '\n';
      }
     return 0;
 }
